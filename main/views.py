@@ -3,7 +3,7 @@ from .models import navbar, libro, autor, categoria
 # Create your views here.
 
 def index(request):
-    titulo = "Home"
+    titulo = "Bookers"
     navbars = navbar.objects.all()
     context = {'navbar': navbars, 'Titulo': titulo}
     return render(request, 'index.html', context)

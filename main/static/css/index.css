@@ -1,0 +1,9 @@
+.custom-carousel-item {
+    height: 500px;
+}
+
+.custom-carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

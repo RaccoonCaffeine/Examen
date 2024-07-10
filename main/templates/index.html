@@ -2,18 +2,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>{{Titulo}}</title>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>{{ Titulo }}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light" style="">
+<nav class="navbar navbar-expand-md navbar-light">
     <a class="navbar-brand mr-2" href="/index">
-        <img src="{%static 'img/logo.png'%}" class="img-fluid" width="50" height="50" class="d-block">
+        <img src="{% static 'img/logo.png' %}" class="img-fluid" width="50" height="50" alt="Logo">
     </a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -22,19 +22,82 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             {% for item in navbar %}
-                {% if item.nombre == Titulo %}
-                    <a class="nav-item nav-link active mt-2 ml-2" href="{% url item.url %}" style="font-size: 30px; align-self: flex-end;">{{item.nombre}}</a>
-                {% else %}
-                    <a class="nav-item nav-link mt-2 ml-2" href="{% url item.url %}" style="font-size: 30px; align-self: flex-end;">{{item.nombre}}</a>
-                {% endif %}
+                <li class="nav-item {% if item.nombre == Titulo %}active{% endif %}">
+                    <a class="nav-link mt-2 ml-2" href="{% url item.url %}" style="font-size: 30px;">{{ item.nombre }}</a>
+                </li>
             {% endfor %}
         </ul>
+        <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'index' %}">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Buscar" name="buscar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
     </div>
 </nav>
+
+<!-- Carousel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active custom-carousel-item">
+            <img src="{% static 'img/slider 1.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item custom-carousel-item">
+            <img src="{% static 'img/slider 1.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item custom-carousel-item">
+            <img src="{% static 'img/slider 1.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1>Bookers</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate doloribus expedita vel culpa atque iusto nisi quia voluptatum eligendi sint?</p>
+    </div>
+</div>
+
+<!-- Libros random -->
+<div class="container">
+    {% if libros_random %}
+        <h2 class="p-5 text-center">Algunos de nuestros libros</h2>
+        <div class="row">
+            {% for item in libros_random %}
+                <div class="col-md-4 py-2">
+                    <div class="card h-100">
+                        <img src="{{ item.img.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.titulo }}</h5>
+                            <p class="card-text">{{ item.autor }}</p>
+                            <p class="card-text">{{ item.categoria }}</p>
+                            <a href="{{ item.link }}" class="btn btn-sm btn-outline-secondary">Ver</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h1>No hay resultados</h1>
+    {% endif %}
+</div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{%static 'js/jquery-3.7.1.js'%}"></script>
+<script src="{% static 'js/jquery-3.7.1.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="{%static 'js/bootstrap.js'%}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
 </body>
 </html>

@@ -6,12 +6,11 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
+<link rel="stylesheet" href="{%static 'css/index.css'%}">
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light" style="">
+<nav class="navbar navbar-expand-md navbar-light">
     <a class="navbar-brand mr-2" href="/index">
         <img src="{%static 'img/logo.png'%}" class="img-fluid" width="50" height="50" class="d-block">
     </a>
@@ -29,8 +28,45 @@
                 {% endif %}
             {% endfor %}
         </ul>
+        <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'index' %}">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Buscar" name="buscar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
     </div>
 </nav>
+
+<!-- Barra de busqueda para categorias -->
+<div class="container mt-4">
+    <h1 class="text-center">Lista de categorias</h1>
+    <div class="row justify-content-center mb-4">
+        <form class="form-inline" method="GET">
+            <input class="form-control mr-sm-2" type="search" placeholder="Busca tu categoria..." aria-label="Buscar" name="buscar-categoria">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Tabla de categorias -->
+<div class="container">
+    <div class="row justify-content-center">
+        <table class="table table-bordered table-dark col-12 mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in categorias %}
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.nombre}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="{%static 'js/jquery-3.7.1.js'%}"></script>

@@ -9,27 +9,31 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light">
-    <a class="navbar-brand mr-2" href="/index">
-        <img src="{% static 'img/logo.png' %}" class="img-fluid" width="50" height="50" alt="Logo">
-    </a>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            {% for item in navbar %}
-                <li class="nav-item {% if item.nombre == Titulo %}active{% endif %}">
-                    <a class="nav-link mt-2 ml-2" href="{% url item.url %}" style="font-size: 30px;">{{ item.nombre }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-        <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'index' %}">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Buscar" name="buscar">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    <nav class="navbar navbar-expand-md navbar-dark " style="background-color: black;">
+        <a class="navbar-brand d-flex align-items-center mr-2" href="/index">
+            <img src="{% static 'img/logo.png' %}" class="img-fluid" width="50" height="50" alt="Logo">
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                {% for item in navbar %}
+                    <li class="nav-item {% if item.nombre == Titulo %}active{% endif %}">
+                        <a class="nav-link mt-2 ml-2" href="{% url item.url %}" style=" font-family:bona-nova-sc-bold ; font-size: 30px;">{{ item.nombre }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'resultados' %}">
+            <input class="form-control mr-sm-2 bg-transparent text-white btn-outline-light"  type="search" placeholder="Buscar..." aria-label="Buscar" name="buscar">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
         </form>
     </div>
 </nav>
@@ -46,10 +50,10 @@
             <img src="{% static 'img/slider 1.jpg' %}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item custom-carousel-item">
-            <img src="{% static 'img/slider 1.jpg' %}" class="d-block w-100" alt="...">
+            <img src="{% static 'img/slider 2.jpg' %}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item custom-carousel-item">
-            <img src="{% static 'img/slider 1.jpg' %}" class="d-block w-100" alt="...">
+            <img src="{% static 'img/slider 3.jpg' %}" class="d-block w-100" alt="...">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -65,15 +69,27 @@
 <!-- Jumbotron -->
 <div class="jumbotron jumbotron-fluid">
     <div class="container text-center">
-        <h1>Bookers</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate doloribus expedita vel culpa atque iusto nisi quia voluptatum eligendi sint?</p>
+        <h1 style="font-family: bona-nova-sc-bold; font-size: 70px; ">Bookers</h1>
+        <p style="font-family:bona-nova-sc-regular-italic ; font-size: 25px;" >El Portal de Boockers es el canal de comunicación permanente con nuestra Comunidad Educativa y entrega una amplia variedad recursos que apoyan el proceso de enseñanza y aprendizaje.
+
+            Desde marzo a la fecha, el Portal ha recibido alrededor de 400.000 visitas, posicionándolo como un servicio en línea de alto impacto entre nuestros estudiantes, docentes y vecinos. Es por esta razón que el área de Tecnologías e Innovación de la Subdirección de Bibliotecas, en su permanente búsqueda de mejoras, trabajó en esta nueva interfaz, dando énfasis a una navegación más intuitiva y que permita acceder a los distintos contenidos más visitados, de acuerdo a los estudios realizados antes de configurar esta nueva interfaz.</p>
+    
+        <div class="row align-justify-content-center pt-4 " >
+        <div class="col-6">
+        <button class="btn btn-lg btn-dark my-2 my-sm-0" type="submit"> <p class="text-center" style=" padding: 20px 75px ; font-size: 45px;">NASHE</p></button>
     </div>
+    <div class="col-6">
+        <button class="btn btn-lg btn-dark my-2 my-sm-0" type="submit"> <p class="text-center" style=" padding: 20px 75px ; font-size: 45px;">NASHE</p></button>
+             
+    </div>
+    </div>
+        </div>
 </div>
 
 <!-- Libros random -->
 <div class="container">
     {% if libros_random %}
-        <h2 class="p-5 text-center">Algunos de nuestros libros</h2>
+        <h2 style="font-family: bona-nova-sc-bold; font-size: 70px; " class="  p-5 text-center ">Algunos de nuestros libros</h2>
         <div class="row">
             {% for item in libros_random %}
                 <div class="col-md-4 py-2">

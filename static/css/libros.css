@@ -1,0 +1,7 @@
+.limitar-texto {
+    display: inline-block;
+    width: 200px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

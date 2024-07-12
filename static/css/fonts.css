@@ -1,21 +1,18 @@
-.bebas-neue-regular {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;}
-    .rowdies-light {
-    font-family: "Rowdies", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    }
-
-    .rowdies-regular {
-    font-family: "Rowdies", sans-serif;
+.bona-nova-sc-regular {
+    font-family: "Bona Nova SC", serif;
     font-weight: 400;
     font-style: normal;
     }
-
-    .rowdies-bold {
-    font-family: "Rowdies", sans-serif;
+    
+    .bona-nova-sc-bold {
+    font-family: "Bona Nova SC", serif;
     font-weight: 700;
     font-style: normal;
     }
+    
+    .bona-nova-sc-regular-italic {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: italic;
+    }
+    

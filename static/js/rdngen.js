@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#random').on('click', function() {
         $.ajax({
-            url: '{% url "random" %}',  // Debe coincidir con el nombre definido en urls.py
+            url: '/rdn/',  // Debe coincidir con el nombre definido en urls.py
             type: 'GET',
             success: function(data) {
                 // Actualizar la sección de libros random con los nuevos datos

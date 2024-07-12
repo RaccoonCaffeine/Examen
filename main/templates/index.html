@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
@@ -91,7 +91,6 @@
     <!-- Libros random -->
     <div class="container rdn">
         <div id="libros-random">
-            <!-- Aquí se cargará dinámicamente el contenido de libros aleatorios -->
             {% include 'random.html' %}
         </div>
         <button id="random" class="btn btn-secondary col-12 pb-10" style="padding: 15px 50px; font-size: 45px; text-align: center;">Ver libros diferentes</button>
@@ -102,8 +101,7 @@
             <span class="text-muted" style="font-size: 25px;"><a href="https://github.com/RaccoonCaffeine/Examen"><i class="bi bi-github"></i> Github Bookers</a></span>
         </div>
     </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- JavaScript -->
     <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
@@ -111,8 +109,6 @@
     <script src="{% static 'js/sweetalert2.js' %}"></script>
     <script src="{% static 'js/inload.js' %}"></script>
     <script src="{% static 'js/rdngen.js' %}"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script src="{% static 'js/AOSinit.js' %}"></script>
 </body>
 </html>

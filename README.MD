@@ -1,9 +1,7 @@
 # EXAMEN TRANSVERSAL MDY3131
- 
 - [Instalación](#instalación)
 - [Tecnicas utilizadas](#tecnicas-utilizadas)
-- [Bookers](#BookersProyect)
-- [Integrantes](#Integrantes)
+- [Integrantes](#integrantes)
 ------------
 # Instalación
 ### 1.Clonar el repositorio de GitHub
@@ -51,7 +49,7 @@
    - Uso de Git para control de versiones y gestión del código fuente
 ------------
 # BookersProyect
-<!-- #Integrantes -->
+<!-- #integrantes -->
 <div style="display: flex; align-items: center;">
     <img src="https://media.discordapp.net/attachments/1148447558813876276/1259368332461735955/nashe-removebg-preview.png?ex=66920528&is=6690b3a8&hm=5bb51458537a464b56b9ffaa96405150c702a7d2fc91854167cfa7f2d3d2425b&=&format=webp&quality=lossless&width=200&height=200" alt="Bookers" style="margin-right: 20px;"/>
     <div>

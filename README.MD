@@ -40,6 +40,6 @@
         </ul>
     </div>
 </div>
-Bookers 2024
+&reg; Bookers 2024
 
 ------------

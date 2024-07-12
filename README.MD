@@ -2,9 +2,8 @@
  
 - [Instalación](#instalación)
 - [Bookers](#bookers)
-
+- [Tecnicas utilizadas](#tecnicas-utilizadas)
 ------------
-
 # Instalación
 ### 1.Clonar el repositorio de GitHub
 - Abre una terminal y ejecuta el siguiente comando para clonar el repositorio:
@@ -28,6 +27,27 @@
   - `py manage.py runserver`
 ### 7.Acceder a la aplicación
 - Abre tu navegador web y ve a `http://127.0.0.1:8000/` para ver la aplicación en funcionamiento.
+------------
+# Tecnicas utilizadas
+1. **Framework Backend**: Django
+2. **Base de Datos**: SQLite (por defecto en Django)
+3. **Frontend Framework**: Bootstrap
+4. **JavaScript Libraries**:
+   - jQuery
+   - AOS library (Animate on Scroll)
+   - SweetAlert2
+5. **Tecnologías de Interfaz de Usuario**:
+   - HTML
+   - CSS
+6. **Herramientas de Optimización de UI/UX**:
+   - Bootstrap Icons
+7. **Herramientas de Integración y Mejora de Experiencia**:
+   - AJAX para carga dinámica de contenido
+   - Implementación de botones de carga y búsqueda usando JavaScript
+8. **Gestión de Imágenes**:
+   - Django `ImageField` para manejar imágenes de libros
+9. **Control de Versiones**:
+   - Uso de Git para control de versiones y gestión del código fuente
 ------------
 # Bookers Proyect
 <div style="display: flex; align-items: center;">

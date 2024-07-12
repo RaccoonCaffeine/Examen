@@ -1,0 +1,20 @@
+{% if libros_random %}
+        <h2 data-aos="fade-down" style="font-family: bona-nova-sc-bold; font-size: 70px; " class="p-5 text-center">Algunos de nuestros libros</h2>
+        <div class="row pb-5">
+            {% for item in libros_random %}
+                <div data-aos="fade-up" class="col-md-4 col-sm-4 py-2">
+                    <div class="card h-100">
+                        <img src="{{ item.img.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.titulo }}</h5>
+                            <p class="card-text">{{ item.autor }}</p>
+                            <p class="card-text">{{ item.categoria }}</p>
+                            <a href="{{ item.link }}" class="btn btn-sm btn-outline-secondary">Ver</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h1>No hay resultados</h1>
+    {% endif %}

@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.db.models import Q
 from .models import navbar, libro, autor, categoria
+import time
 
 def index(request):
-    random_items = list(libro.objects.order_by('?')[:3])  # Obtener 3 libros aleatorios
+    random_items = list(libro.objects.order_by('?')[:3])
     query = request.GET.get('buscar')
     if query:
         return redirect(reverse('resultados') + f'?buscar={query}')
@@ -16,6 +17,11 @@ def index(request):
         context = {'navbar': navbars, 'Titulo': titulo, 'libros_random': random_items}
         return render(request, template, context)
     
+def random(request):
+    random_items = list(libro.objects.order_by('?')[:3])
+    context = {'libros_random': random_items}
+    return render(request, 'random.html', context)
+    
 def resultados(request):
     query = request.GET.get('buscar')
     if query:
@@ -26,8 +32,9 @@ def resultados(request):
         ).distinct()
         titulo = f"Resultados de la búsqueda: {query}"
     else:
-        buscar = libro.objects.all()
-        titulo = "Todos los libros"
+        buscar = list(libro.objects.order_by('?')[:6])
+        titulo = "Todos los libros" 
+    time.sleep(2)
     navbars = navbar.objects.all()
     return render(request, 'resultado.html', {'buscar': buscar, 'Titulo': titulo, 'navbar': navbars})
     

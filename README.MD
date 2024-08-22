@@ -51,7 +51,7 @@
 # BookersProyect
 <!-- #integrantes -->
 <div style="display: flex; align-items: center;">
-    <img src="https://cdn.discordapp.com/attachments/1148447558813876276/1259367478346125362/nashe.jpg?ex=66c7691c&is=66c6179c&hm=94d29de0ac4d1ee2e3a9f2d1d86f8cec7330ed892b569a00242edd755d05689e&quality=lossless&width=200&height=200" alt="Bookers" style="margin-right: 20px;"/>
+    <img src="https://cdn.discordapp.com/attachments/1148447558813876276/1259368332461735955/nashe-removebg-preview.png?ex=66c769e8&is=66c61868&hm=a13e74d9f191fae1ef06e916120db738a34654eb2349800ea3cc03ebe8dea9fc&width=200&height=200" alt="Bookers" style="margin-right: 20px;"/>
     <div>
         <h4>Integrantes:</h4>
         <ul>
